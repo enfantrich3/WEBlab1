@@ -96,6 +96,30 @@
     </section>
   </main>
 
+  <!-- Модальное окно с формой заказа (скрыто, пока не нажата кнопка) -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">✕</button>
+      <h2>Оформление заказа</h2>
+
+      <form class="order-form" id="order-form">
+        <label for="first-name">Имя</label>
+        <input type="text" id="first-name" name="first-name" required>
+
+        <label for="last-name">Фамилия</label>
+        <input type="text" id="last-name" name="last-name" required>
+
+        <label for="address">Адрес доставки</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="phone">Контактный телефон</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <button type="submit" class="order-button">Создать заказ</button>
+      </form>
+    </div>
+  </div>
+
   <!-- Подвал сайта -->
   <footer class="footer" id="contacts">
     <div class="container">
