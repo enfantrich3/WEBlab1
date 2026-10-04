@@ -14,6 +14,7 @@
       <nav>
         <ul class="menu">
           <li><a href="#catalog">Каталог</a></li>
+          <li><a href="#cart">Корзина</a></li>
           <li><a href="#contacts">Контакты</a></li>
         </ul>
       </nav>
@@ -75,6 +76,22 @@
             <button class="card-button">Добавить в корзину</button>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- Корзина -->
+    <section class="cart" id="cart">
+      <div class="container">
+        <h2>Корзина</h2>
+
+        <p class="cart-empty" id="cart-empty">Корзина пуста</p>
+
+        <!-- Сюда JavaScript будет добавлять товары -->
+        <ul class="cart-list" id="cart-list"></ul>
+
+        <p class="cart-total">Итого: <span id="cart-total">0</span> ₽</p>
+
+        <button class="order-button" id="order-button">Оформить заказ</button>
       </div>
     </section>
   </main>
