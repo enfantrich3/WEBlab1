@@ -73,6 +73,18 @@ function addToCart(product) {
   showCart();
 }
 
+// удалить из корзины
+function removeFromCart(id) {
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].id === id) {
+      cart.splice(i, 1);
+      break;
+    }
+  }
+
+  showCart();
+}
+
 // сумма
 function getTotal() {
   let total = 0;
@@ -99,9 +111,17 @@ function showCart() {
     const sum = document.createElement('span');
     sum.textContent = item.price * item.count + ' ₽';
 
+    const removeButton = document.createElement('button');
+    removeButton.className = 'cart-remove';
+    removeButton.textContent = 'Удалить';
+    removeButton.addEventListener('click', function () {
+      removeFromCart(item.id);
+    });
+
     li.appendChild(name);
     li.appendChild(count);
     li.appendChild(sum);
+    li.appendChild(removeButton);
     cartList.appendChild(li);
   }
 

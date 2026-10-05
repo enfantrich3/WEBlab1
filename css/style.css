@@ -148,6 +148,20 @@ body {
   border-bottom: 1px solid #dddddd;
 }
 
+.cart-remove {
+  padding: 5px 10px;
+  color: #b33a3a;
+  background: none;
+  border: 1px solid #b33a3a;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-remove:hover {
+  color: #ffffff;
+  background-color: #b33a3a;
+}
+
 .cart-total {
   font-size: 20px;
   font-weight: bold;
