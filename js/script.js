@@ -73,6 +73,23 @@ function addToCart(product) {
   showCart();
 }
 
+// изменить количество
+function changeCount(id, change) {
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].id === id) {
+      cart[i].count = cart[i].count + change;
+
+      // если стало 0, убираем товар
+      if (cart[i].count === 0) {
+        cart.splice(i, 1);
+      }
+      break;
+    }
+  }
+
+  showCart();
+}
+
 // удалить из корзины
 function removeFromCart(id) {
   for (let i = 0; i < cart.length; i++) {
@@ -105,8 +122,27 @@ function showCart() {
     const name = document.createElement('span');
     name.textContent = item.name;
 
-    const count = document.createElement('span');
-    count.textContent = item.count + ' шт.';
+    const count = document.createElement('div');
+    count.className = 'cart-count';
+
+    const minusButton = document.createElement('button');
+    minusButton.textContent = '−';
+    minusButton.addEventListener('click', function () {
+      changeCount(item.id, -1);
+    });
+
+    const number = document.createElement('span');
+    number.textContent = item.count;
+
+    const plusButton = document.createElement('button');
+    plusButton.textContent = '+';
+    plusButton.addEventListener('click', function () {
+      changeCount(item.id, 1);
+    });
+
+    count.appendChild(minusButton);
+    count.appendChild(number);
+    count.appendChild(plusButton);
 
     const sum = document.createElement('span');
     sum.textContent = item.price * item.count + ' ₽';

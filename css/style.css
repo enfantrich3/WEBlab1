@@ -148,6 +148,22 @@ body {
   border-bottom: 1px solid #dddddd;
 }
 
+.cart-count {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-count button {
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  background-color: #f5f5f0;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .cart-remove {
   padding: 5px 10px;
   color: #b33a3a;
