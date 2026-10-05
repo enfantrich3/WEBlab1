@@ -3,10 +3,10 @@ const cartList = document.getElementById('cart-list');
 const cartEmpty = document.getElementById('cart-empty');
 const cartTotal = document.getElementById('cart-total');
 
-// Товары в корзине: { id, name, price, count }
+// корзина
 let cart = [];
 
-// Создаёт карточку одного товара
+// карточка товара
 function createCard(product) {
   const card = document.createElement('article');
   card.className = 'card';
@@ -43,14 +43,14 @@ function createCard(product) {
   return card;
 }
 
-// Выводит все товары на страницу
+// вывод каталога
 function showProducts() {
   for (const product of products) {
     productsContainer.appendChild(createCard(product));
   }
 }
 
-// Добавляет товар в корзину
+// добавить в корзину
 function addToCart(product) {
   let item = null;
   for (let i = 0; i < cart.length; i++) {
@@ -73,7 +73,7 @@ function addToCart(product) {
   showCart();
 }
 
-// Считает общую сумму корзины
+// сумма
 function getTotal() {
   let total = 0;
   for (const item of cart) {
@@ -82,7 +82,7 @@ function getTotal() {
   return total;
 }
 
-// Выводит товары корзины на страницу
+// вывод корзины
 function showCart() {
   cartList.textContent = '';
 
@@ -105,7 +105,7 @@ function showCart() {
     cartList.appendChild(li);
   }
 
-  // Надпись «Корзина пуста» видна, только если товаров нет
+  // если пусто
   if (cart.length === 0) {
     cartEmpty.style.display = 'block';
   } else {

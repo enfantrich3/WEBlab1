@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Чайная лавка</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Шапка сайта -->
+  <!-- шапка -->
   <header class="header">
     <div class="container header-inner">
       <a class="logo" href="#">🍵 Чайная лавка</a>
@@ -22,24 +23,22 @@
   </header>
 
   <main>
-    <!-- Каталог товаров -->
+    <!-- каталог -->
     <section class="catalog" id="catalog">
       <div class="container">
         <h1>Каталог товаров</h1>
 
-        <!-- Карточки товаров создаются в js/script.js -->
         <div class="products" id="products"></div>
       </div>
     </section>
 
-    <!-- Корзина -->
+    <!-- корзина -->
     <section class="cart" id="cart">
       <div class="container">
         <h2>Корзина</h2>
 
         <p class="cart-empty" id="cart-empty">Корзина пуста</p>
 
-        <!-- Сюда JavaScript будет добавлять товары -->
         <ul class="cart-list" id="cart-list"></ul>
 
         <p class="cart-total">Итого: <span id="cart-total">0</span> ₽</p>
@@ -49,7 +48,7 @@
     </section>
   </main>
 
-  <!-- Модальное окно с формой заказа (скрыто, пока не нажата кнопка) -->
+  <!-- форма заказа -->
   <div class="modal" id="modal">
     <div class="modal-content">
       <button class="modal-close" id="modal-close">✕</button>
@@ -73,7 +72,7 @@
     </div>
   </div>
 
-  <!-- Подвал сайта -->
+  <!-- подвал -->
   <footer class="footer" id="contacts">
     <div class="container">
       <p>Чайная лавка, 2026</p>

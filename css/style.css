@@ -1,4 +1,4 @@
-/* Общие стили */
+/* общее */
 * {
   box-sizing: border-box;
 }
@@ -16,7 +16,7 @@ body {
   padding: 0 15px;
 }
 
-/* Шапка */
+/* шапка */
 .header {
   background-color: #ffffff;
   border-bottom: 1px solid #dddddd;
@@ -59,7 +59,7 @@ body {
   color: #5b7f3a;
 }
 
-/* Каталог */
+/* каталог */
 .catalog {
   padding: 30px 0;
 }
@@ -70,7 +70,7 @@ body {
   gap: 20px;
 }
 
-/* Карточка товара */
+/* карточка */
 .card {
   display: flex;
   flex-direction: column;
@@ -114,7 +114,7 @@ body {
   background-color: #466330;
 }
 
-/* Подвал */
+/* подвал */
 .footer {
   padding: 20px 0;
   background-color: #ffffff;
@@ -122,7 +122,7 @@ body {
   color: #777777;
 }
 
-/* Корзина */
+/* корзина */
 .cart {
   padding: 30px 0;
   background-color: #ffffff;
@@ -167,9 +167,9 @@ body {
   background-color: #466330;
 }
 
-/* Модальное окно */
+/* модалка */
 .modal {
-  display: none; /* скрыто по умолчанию */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -180,7 +180,7 @@ body {
   align-items: center;
 }
 
-/* Этот класс будет добавлять JavaScript, чтобы показать окно */
+/* открытая модалка */
 .modal.open {
   display: flex;
 }
@@ -203,7 +203,7 @@ body {
   cursor: pointer;
 }
 
-/* Форма заказа */
+/* форма */
 .order-form {
   display: flex;
   flex-direction: column;
@@ -221,7 +221,7 @@ body {
   margin-top: 10px;
 }
 
-/* Адаптивность: планшет */
+/* планшет */
 @media (max-width: 900px) {
   .header-inner {
     display: flex;
@@ -237,7 +237,7 @@ body {
   }
 }
 
-/* Адаптивность: телефон */
+/* телефон */
 @media (max-width: 600px) {
   .logo {
     font-size: 28px;
