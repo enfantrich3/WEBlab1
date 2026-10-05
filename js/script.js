@@ -1,4 +1,10 @@
 const productsContainer = document.getElementById('products');
+const cartList = document.getElementById('cart-list');
+const cartEmpty = document.getElementById('cart-empty');
+const cartTotal = document.getElementById('cart-total');
+
+// Товары в корзине: { id, name, price, count }
+let cart = [];
 
 // Создаёт карточку одного товара
 function createCard(product) {
@@ -25,6 +31,9 @@ function createCard(product) {
   const button = document.createElement('button');
   button.className = 'card-button';
   button.textContent = 'Добавить в корзину';
+  button.addEventListener('click', function () {
+    addToCart(product);
+  });
 
   card.appendChild(image);
   card.appendChild(title);
@@ -41,4 +50,69 @@ function showProducts() {
   }
 }
 
+// Добавляет товар в корзину
+function addToCart(product) {
+  let item = null;
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].id === product.id) {
+      item = cart[i];
+    }
+  }
+
+  if (item) {
+    item.count = item.count + 1;
+  } else {
+    cart.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      count: 1
+    });
+  }
+
+  showCart();
+}
+
+// Считает общую сумму корзины
+function getTotal() {
+  let total = 0;
+  for (const item of cart) {
+    total = total + item.price * item.count;
+  }
+  return total;
+}
+
+// Выводит товары корзины на страницу
+function showCart() {
+  cartList.textContent = '';
+
+  for (const item of cart) {
+    const li = document.createElement('li');
+    li.className = 'cart-item';
+
+    const name = document.createElement('span');
+    name.textContent = item.name;
+
+    const count = document.createElement('span');
+    count.textContent = item.count + ' шт.';
+
+    const sum = document.createElement('span');
+    sum.textContent = item.price * item.count + ' ₽';
+
+    li.appendChild(name);
+    li.appendChild(count);
+    li.appendChild(sum);
+    cartList.appendChild(li);
+  }
+
+  // Надпись «Корзина пуста» видна, только если товаров нет
+  if (cart.length === 0) {
+    cartEmpty.style.display = 'block';
+  } else {
+    cartEmpty.style.display = 'none';
+  }
+  cartTotal.textContent = getTotal();
+}
+
 showProducts();
+showCart();
