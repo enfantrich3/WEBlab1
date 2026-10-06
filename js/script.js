@@ -2,6 +2,9 @@ const productsContainer = document.getElementById('products');
 const cartList = document.getElementById('cart-list');
 const cartEmpty = document.getElementById('cart-empty');
 const cartTotal = document.getElementById('cart-total');
+const orderButton = document.getElementById('order-button');
+const modal = document.getElementById('modal');
+const modalClose = document.getElementById('modal-close');
 
 // корзина
 let cart = [];
@@ -178,6 +181,16 @@ function showCart() {
   // сохраняем
   localStorage.setItem('cart', JSON.stringify(cart));
 }
+
+// открыть форму
+orderButton.addEventListener('click', function () {
+  modal.classList.add('open');
+});
+
+// закрыть форму
+modalClose.addEventListener('click', function () {
+  modal.classList.remove('open');
+});
 
 showProducts();
 showCart();
