@@ -6,6 +6,12 @@ const cartTotal = document.getElementById('cart-total');
 // корзина
 let cart = [];
 
+// берём сохранённую корзину
+const savedCart = localStorage.getItem('cart');
+if (savedCart) {
+  cart = JSON.parse(savedCart);
+}
+
 // карточка товара
 function createCard(product) {
   const card = document.createElement('article');
@@ -168,6 +174,9 @@ function showCart() {
     cartEmpty.style.display = 'none';
   }
   cartTotal.textContent = getTotal();
+
+  // сохраняем
+  localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 showProducts();
