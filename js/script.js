@@ -182,6 +182,9 @@ function showCart() {
   }
   cartTotal.textContent = getTotal();
 
+  // пустую корзину не оформить
+  orderButton.disabled = cart.length === 0;
+
   // сохраняем
   localStorage.setItem('cart', JSON.stringify(cart));
 }

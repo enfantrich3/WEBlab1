@@ -197,6 +197,11 @@ body {
   background-color: #466330;
 }
 
+.order-button:disabled {
+  background-color: #aaaaaa;
+  cursor: default;
+}
+
 .order-message {
   display: none;
   margin-top: 15px;
