@@ -5,6 +5,8 @@ const cartTotal = document.getElementById('cart-total');
 const orderButton = document.getElementById('order-button');
 const modal = document.getElementById('modal');
 const modalClose = document.getElementById('modal-close');
+const orderForm = document.getElementById('order-form');
+const orderMessage = document.getElementById('order-message');
 
 // корзина
 let cart = [];
@@ -61,6 +63,8 @@ function showProducts() {
 
 // добавить в корзину
 function addToCart(product) {
+  orderMessage.style.display = 'none';
+
   let item = null;
   for (let i = 0; i < cart.length; i++) {
     if (cart[i].id === product.id) {
@@ -190,6 +194,18 @@ orderButton.addEventListener('click', function () {
 // закрыть форму
 modalClose.addEventListener('click', function () {
   modal.classList.remove('open');
+});
+
+// создать заказ
+orderForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  cart = [];
+  showCart();
+
+  orderForm.reset();
+  modal.classList.remove('open');
+  orderMessage.style.display = 'block';
 });
 
 showProducts();

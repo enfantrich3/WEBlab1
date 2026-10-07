@@ -197,6 +197,17 @@ body {
   background-color: #466330;
 }
 
+.order-message {
+  display: none;
+  margin-top: 15px;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #466330;
+  background-color: #eef4e8;
+  border-radius: 5px;
+}
+
 /* модалка */
 .modal {
   display: none;
